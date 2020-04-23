@@ -26,7 +26,7 @@ jobs:
     - name: Install Package
       run: |
         python -m pip install --upgrade pip
-        pip install .
+        pip install . rundoc
     - name: Test README
       run: |
         make test-readme
