@@ -6,9 +6,17 @@ python:
   - 3.6
   - 3.5
 
+matrix:
+  include:
+    - os: osx
+      language: generic
+
 # Command to install dependencies
 addons:
   apt:
+    packages:
+      - pandoc
+  homebrew:
     packages:
       - pandoc
 install: pip install -U tox-travis codecov
@@ -19,7 +27,6 @@ script: tox
 after_success: codecov
 
 deploy:
-
   - provider: pages
     skip-cleanup: true
     github-token: "$GITHUB_TOKEN"

@@ -118,9 +118,17 @@ test-unit: ## run tests quickly with the default Python
 test-numerical: ## run tests quickly with the default Python
 	python -m pytest --disable-warnings --cov=copulas tests/numerical
 
+.PHONY: test-readme
+test-readme: ## run the readme snippets
+	rundoc run --single-session python3 -t python3 README.md
+
+.PHONY: test-tutorials
+test-tutorials: ## run the tutorial notebooks
+	jupyter nbconvert --execute --ExecutePreprocessor.timeout=600 tutorials/*.ipynb --stdout > /dev/null
+
 .PHONY: test-all
 test-all: ## run tests on every Python version with tox
-	tox -r
+	tox -r -p auto
 
 .PHONY: coverage
 coverage: ## check code coverage quickly with the default Python
