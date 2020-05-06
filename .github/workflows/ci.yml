@@ -33,7 +33,7 @@ jobs:
     - name: Install tutorial dependencies
       run: |
         pip install .[tutorials]
-    - name: Test README
+    - name: Test Tutorials
       run: |
         make test-tutorials
     - name: Install test dependencies
