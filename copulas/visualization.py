@@ -3,7 +3,7 @@ import pandas as pd
 from mpl_toolkits import mplot3d  # noqa: importing this fixes import error in py35
 
 matplotlib.use('PS')   # Avoid crash on macos
-plt = matplotlib.pyplot
+import matplotlib.pyplot as plt   # noqa isort:skip
 
 
 def scatter_3d(data, columns=None, fig=None, title=None, position=None):
