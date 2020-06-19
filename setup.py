@@ -15,7 +15,7 @@ install_requires = [
     'numpy>=1.13.1,<1.17',
     'pandas>=0.22.0,<0.25',
     'scipy>=1.2,<1.3',
-    'matplotlib>=2.2.2,<4',
+    'matplotlib>=2.2.2,<3.2.2',
 ]
 
 development_requires = [
