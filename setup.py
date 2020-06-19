@@ -57,8 +57,8 @@ development_requires = [
 ]
 
 tutorials_require = [
+    'scikit-learn>=0.22,<0.23',
     'jupyter>=1.0.0,<2',
-    'scikit-learn>=0.22,<0.23'
 ]
 
 tests_require = [
@@ -92,7 +92,7 @@ setup(
     },
     extras_require={
         'tutorials': tutorials_require,
-        'test': tests_require,
+        'test': tests_require + tutorials_require,
         'dev': tests_require + development_requires + tutorials_require,
     },
     install_requires=install_requires,
